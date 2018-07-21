@@ -2,6 +2,12 @@
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 3em;
+  padding: 0.5em;
+}
+
+.active-menu-page {
+  cursor: inherit;
 }
 
 .menu-router {
@@ -16,12 +22,11 @@
   flex-direction: column;
 }
 
-.active-menu-page {
-  order: -2;
+.menu-body {
+  /*flex-grow: 1;*/
+  height: 100%;
 }
 
-.menu-body {
-  order: -1;
-  flex-grow: 1;
-  color: green;
+.active-menu-page + .menu-body {
+  height: 100%;
 }

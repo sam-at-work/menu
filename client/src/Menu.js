@@ -10,45 +10,44 @@ import "./Menu.css";
 
 export const Menu = () => (
   <Router>
-    <div
-      className={"menu-router"}
-    >
-      <NavLink
-        to="/burgers"
-        className="title"
-        activeClassName="active-menu-page"
-        style={{ backgroundColor: "red" }}
-      >
-        Hamburgers
-      </NavLink>
-      <NavLink
-        to="/pizza"
-        className="title"
-        activeClassName="active-menu-page"
-        style={{ backgroundColor: "blue" }}
-      >
-        Pizza
-      </NavLink>
-      <NavLink
-        to="/dessert"
-        className="title"
-        activeClassName="active-menu-page"
-        style={{ backgroundColor: "pink" }}
-      >
-        Dessert
-      </NavLink>
+    <div className={"menu-router"}>
+      <div style={{ backgroundColor: "blue" }}>
+        <NavLink
+          to="/burgers"
+          className="title"
+          activeClassName="active-menu-page"
+        >
+          Hamburgers
+        </NavLink>
+        <Route path={"/burgers"} component={Burgers} />
+      </div>
 
-      <Route path={"/burgers"} component={Burgers} />
-      <Route path={"/pizza"} component={Pizza} />
-      <Route path={"/dessert"} component={Dessert} />
+      <div style={{ backgroundColor: "orange" }}>
+        <NavLink
+          to="/pizza"
+          className="title"
+          activeClassName="active-menu-page"
+        >
+          Pizza
+        </NavLink>
+        <Route path={"/pizza"} component={Pizza} />
+      </div>
 
+      <div style={{ backgroundColor: "pink" }}>
+        <NavLink
+          to="/dessert"
+          className="title"
+          activeClassName="active-menu-page"
+        >
+          Dessert
+        </NavLink>
+        <Route path={"/dessert"} component={Dessert} />
+      </div>
     </div>
-
-
   </Router>
 );
 
-const Burgers = (match) => (
+const Burgers = match => (
   <ul className="menu-body">
     <li>Cheese Burger</li>
     <li>Chicken Burger</li>
@@ -63,7 +62,7 @@ const Pizza = () => (
   </ul>
 );
 
-const Dessert  = () => (
+const Dessert = () => (
   <ul className="menu-body">
     <li>Pavlova</li>
     <li>Ice Cream Sundae</li>
