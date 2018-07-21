@@ -1,8 +1,27 @@
-.menu-sections {
-  position: relative;
+.title {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-router {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'BioRhyme Expanded', serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-menu-page {
+  order: -2;
 }
 
 .menu-body {
-  position: absolute;
-  background-color: inherit;
+  order: -1;
+  flex-grow: 1;
+  color: green;
 }

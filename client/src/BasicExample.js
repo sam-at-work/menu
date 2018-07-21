@@ -1,32 +1,35 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import App from "./App";
-import "./Menu.css";
+// import "./Menu.css";
 
+import { MenuItem } from "./components/MenuItem";
+
+const MenuItemLink = MenuItem.withComponent(Link);
 
 const BasicExample = () => (
   <Router>
     <div>
-      <ul class="menu-sections">
+      <ul className="menu-sections">
         <li>
           <Link to="/">Home</Link>
           <Route path="/" component={Home} />
         </li>
-        <li style={{backgroundColor: 'blue'}}>
-          <Link to="/burgers">Burger</Link>
+        <li style={{ backgroundColor: "blue" }}>
+          <MenuItemLink to="/burgers">Burger</MenuItemLink>
           <Route path="/burgers" component={Burgers} />
         </li>
-        <li style={{ backgroundColor: 'orange' }}>
-          <Link to="/pizza">Pizza</Link>
+        <li style={{ backgroundColor: "orange" }}>
+          <MenuItemLink to="/pizza">Pizza</MenuItemLink>
           <Route path="/pizza" component={Pizza} />
         </li>
         {/*<li>*/}
-          {/*<Link to="/drinks">Drinks</Link>*/}
-          {/*<Route path="/pizza" component={Drinks} />*/}
+        {/*<Link to="/drinks">Drinks</Link>*/}
+        {/*<Route path="/pizza" component={Drinks} />*/}
         {/*</li>*/}
         {/*<li>*/}
-          {/*<Link to="/dessert">Dessert</Link>*/}
-          {/*<Route path="/pizza" component={Dessert} />*/}
+        {/*<Link to="/dessert">Dessert</Link>*/}
+        {/*<Route path="/pizza" component={Dessert} />*/}
         {/*</li>*/}
       </ul>
 
@@ -57,7 +60,6 @@ const BasicExample = () => (
           </li>
         </ul>
       </div>
-
     </div>
   </Router>
 );
@@ -77,7 +79,7 @@ const Burgers = () => (
 
 const Pizza = () => (
   <ul className="menu-body">
-  <li>Hawiaan</li>
+    <li>Hawiaan</li>
     <li>Vege Supreme</li>
   </ul>
 );
