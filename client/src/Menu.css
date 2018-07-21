@@ -1,0 +1,8 @@
+.menu-sections {
+  position: relative;
+}
+
+.menu-body {
+  position: absolute;
+  background-color: inherit;
+}
