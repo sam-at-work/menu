@@ -12,6 +12,9 @@ export const Menu = () => (
   <Router>
     <div className="outer-container">
       <div className="inner-container">
+        <NavLink className="title" to="/home">
+          Home
+        </NavLink>
         <NavLink className="title burgers" to="/burgers">
           Hamburgers
         </NavLink>
