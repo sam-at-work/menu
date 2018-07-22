@@ -7,7 +7,9 @@ import {
 } from "react-router-dom";
 
 import burgers from "./data/burgers";
+import pizza from "./data/pizza";
 import drinks from "./data/drinks";
+
 import "./Menu.css";
 import { MenuItem } from "./components/MenuItem";
 
@@ -18,6 +20,7 @@ export const Menu = () => {
       <div className="outer-container">
         <div className="inner-container">
           <MenuSection sectionPath={"/burgers"} sectionData={burgers} />
+          <MenuSection sectionPath={"/pizza"} sectionData={pizza} />
           <MenuSection sectionPath={"/drinks"} sectionData={drinks} />
         </div>
       </div>

@@ -1,0 +1,44 @@
+{
+  "sectionName": "Pizza",
+  "color": "orange",
+  "menuItems": [
+    {
+      "name": "Marinara",
+      "price": 6,
+      "ingredients": ["tomato", "garlic", "oregano", "basil"]
+    },
+    {
+      "name": "Margherita",
+      "price": 7,
+      "ingredients": ["tomato", "mozzerella", "fresh basil"]
+    },
+    {
+      "name": "Diavola",
+      "price": 8,
+      "ingredients": [
+        "tomato",
+        "mozzarella",
+        "salami Napoli dolce",
+        "spicy peppers"
+      ]
+    },
+    {
+      "name": "Tonno e Cipolla",
+      "price": 8,
+      "ingredients": ["mozzarella", "tuna", "red onion", "basil"]
+    },
+    {
+      "name": "Napoli",
+      "price": 10,
+      "ingredients": [
+        "tomato",
+        "mozzarella",
+        "anchovies",
+        "garlic",
+        "capers",
+        "oregano",
+        "Leccine black olives"
+      ]
+    }
+  ]
+}

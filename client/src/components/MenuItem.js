@@ -8,25 +8,30 @@ const Title = styled.div`
 
 const Price = Title.extend``;
 
-const Item = styled.span`
+const BaseItem = styled.span`
   // block element needed for ::first-letter to work
   display: inline-block;
   
-  :first-child::first-letter {
-    text-transform: capitalize;
-  }
-
   //:not(:last-child):not(:nth-last-child(2)):after {
   :not(:last-child):after {
     content: ", ";
     white-space: pre;
   }
+`;
+
+const Ingredient = BaseItem.extend`
   
-  :nth-last-child(2):after {
-    content: ", & ";
+  :first-child::first-letter {
+    text-transform: capitalize;
+  }
+  
+  :last-child:before {
+    content: "and ";
     white-space: pre;
   }
 `;
+
+const Option = BaseItem.extend``;
 
 const StyledMenuItem = styled.div`
   .top-row {
@@ -35,7 +40,7 @@ const StyledMenuItem = styled.div`
   }
 `;
 
-export const MenuItem = ({ name, price, ingredients }) => {
+export const MenuItem = ({ name, price, ingredients=[], options=[] }) => {
   // debugger;
   return (
     <StyledMenuItem>
@@ -44,7 +49,10 @@ export const MenuItem = ({ name, price, ingredients }) => {
         <Price>{price}</Price>
       </div>
       <div>
-        {ingredients.map(item => <Item key={item}>{item}</Item>)}
+        {ingredients.map(item => <Ingredient key={item}>{item}</Ingredient>)}
+      </div>
+      <div>
+        {options.map(item => <Option key={item}>{item}</Option>)}
       </div>
     </StyledMenuItem>
   );
