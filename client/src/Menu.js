@@ -9,26 +9,16 @@ import {
 import burgers from "./data/burgers";
 import drinks from "./data/drinks";
 import "./Menu.css";
+import { MenuItem } from "./components/MenuItem";
 
 export const Menu = () => {
-  console.log("render");
+  console.log("render menu");
   return (
     <Router>
       <div className="outer-container">
         <div className="inner-container">
-          <MenuSection
-            sectionName={burgers.sectionName}
-            sectionPath={"/burgers"}
-            sectionColor={burgers.color}
-            sectionItems={burgers.menuItems}
-          />
-
-          <MenuSection
-            sectionName={drinks.sectionName}
-            sectionPath={"/drinks"}
-            sectionColor={drinks.color}
-            sectionItems={drinks.menuItems}
-          />
+          <MenuSection sectionPath={"/burgers"} sectionData={burgers} />
+          <MenuSection sectionPath={"/drinks"} sectionData={drinks} />
         </div>
       </div>
     </Router>
@@ -36,12 +26,10 @@ export const Menu = () => {
 };
 
 const MenuSection = ({
-  sectionColor,
-  sectionName,
   sectionPath,
-  sectionItems
+  sectionData: { sectionName, color: sectionColor, menuItems: sectionItems }
 }) => {
-  console.log('render');
+  console.log("render");
   const primaryStyles = { backgroundColor: sectionColor };
   return (
     <React.Fragment>
@@ -63,7 +51,11 @@ const MenuSection = ({
             </Link>
 
             <ul className="scrollable-content" style={primaryStyles}>
-              {sectionItems.map(item => <li key={item}>{item.name}</li>)}
+              {sectionItems.map(item => (
+                <li key={item.name}>
+                  <MenuItem {...item} />
+                </li>
+              ))}
             </ul>
           </React.Fragment>
         )}

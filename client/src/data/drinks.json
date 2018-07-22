@@ -22,17 +22,6 @@
         "lemonade"
       ]
     },
-    {
-      "name": "When Haloumi met Salad Wrap",
-      "price": 8,
-      "ingredients": [
-        "grilled halloume",
-        "sun blushed tomatoes",
-        "hummous",
-        "spinach",
-        "balsamic glaze"
-      ]
-    },
     { "name": "", "price": 0, "ingredients": [] }
   ]
 }
