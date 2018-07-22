@@ -6,6 +6,8 @@ import {
   NavLink
 } from "react-router-dom";
 
+import burgers from "./data/burgers";
+import drinks from "./data/drinks";
 import "./Menu.css";
 
 export const Menu = () => {
@@ -15,14 +17,17 @@ export const Menu = () => {
       <div className="outer-container">
         <div className="inner-container">
           <MenuSection
-            sectionName={"Burgers"}
+            sectionName={burgers.sectionName}
             sectionPath={"/burgers"}
-            sectionColor={"blue"}
-            sectionItems={[
-              "Philly Cheese Burger",
-              "Mr Big Chicken",
-              "Reuben Grilled Cheese"
-            ]}
+            sectionColor={burgers.color}
+            sectionItems={burgers.menuItems}
+          />
+
+          <MenuSection
+            sectionName={drinks.sectionName}
+            sectionPath={"/drinks"}
+            sectionColor={drinks.color}
+            sectionItems={drinks.menuItems}
           />
         </div>
       </div>
@@ -36,6 +41,7 @@ const MenuSection = ({
   sectionPath,
   sectionItems
 }) => {
+  console.log('render');
   const primaryStyles = { backgroundColor: sectionColor };
   return (
     <React.Fragment>
@@ -57,7 +63,7 @@ const MenuSection = ({
             </Link>
 
             <ul className="scrollable-content" style={primaryStyles}>
-              {sectionItems.map(item => <li key={item}>{item}</li>)}
+              {sectionItems.map(item => <li key={item}>{item.name}</li>)}
             </ul>
           </React.Fragment>
         )}

@@ -1,0 +1,53 @@
+{
+  "sectionName": "Burgers",
+  "color": "blue",
+  "menuItems": [
+    {
+      "name": "Phillly Cheese Burger",
+      "price": 10,
+      "ingredients": [
+        "60` beef patty",
+        "cheese",
+        "onions",
+        "pickles",
+        "green peppers",
+        "mustards & ketchup"
+      ]
+    },
+    {
+      "name": "Mr Big Chicken",
+      "price": 8,
+      "ingredients": [
+        "buttermilk fried chicken",
+        "guacamole",
+        "sweet potato fries",
+        "lettuce",
+        "piri pipi",
+        "mustard"
+      ]
+    },
+    {
+      "name": "Reuben Grilled Cheese",
+      "price": 8,
+      "ingredients": [
+        "salt beef",
+        "cheese",
+        "sauerkraut",
+        "pickles",
+        "Reuben sauce"
+      ]
+    },
+    {
+      "name": "When Haloumi met Salad Wrap",
+      "price": 8,
+      "ingredients": [
+        "grilled halloume",
+        "sun blushed tomatoes",
+        "hummous",
+        "spinach",
+        "balsamic glaze"
+      ]
+    },
+    { "name": "", "price": 0, "ingredients": [] }
+  ]
+}

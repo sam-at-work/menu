@@ -1,0 +1,38 @@
+{
+  "sectionName": "Drinks",
+  "color": "orange",
+  "menuItems": [
+    {
+      "name": "Beer & Cider",
+      "price": 4,
+      "ingredients": ["Fuller's Frontier", "Daura Damm", "Cornish Orchards"]
+    },
+    {
+      "name": "Cocktails",
+      "price": 6,
+      "ingredients": ["Botanic Garden", "Tiki Mule", "Margarita", "Rubby Fizz"]
+    },
+    {
+      "name": "Classics",
+      "price": 2,
+      "ingredients": [
+        "ginger beer",
+        "orange or apple juice",
+        "Coke",
+        "lemonade"
+      ]
+    },
+    {
+      "name": "When Haloumi met Salad Wrap",
+      "price": 8,
+      "ingredients": [
+        "grilled halloume",
+        "sun blushed tomatoes",
+        "hummous",
+        "spinach",
+        "balsamic glaze"
+      ]
+    },
+    { "name": "", "price": 0, "ingredients": [] }
+  ]
+}
