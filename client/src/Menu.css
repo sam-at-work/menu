@@ -27,7 +27,7 @@ body {
 }
 
 .scrollable-content {
-  /*flex-grow: 1;*/
+  flex-grow: 1;
 
   overflow: auto;
 
@@ -56,4 +56,8 @@ a, a:visited, a:focus {
 
 .dessert {
   background-color: pink;
+}
+
+.hide-active-menu {
+  display: none;
 }
