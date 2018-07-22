@@ -9,13 +9,19 @@ body {
 
 .outer-container {
   /* give the outermost container a predefined size */
-  height: 100vh;
+  /*height: 100vh;*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+
   display: flex;
   flex-direction: column;
 }
 
 .inner-container {
-  margin: 10px;
+  /*margin: 10px;*/
   background: #2196F3;
   flex-grow: 1;
 
@@ -38,7 +44,6 @@ body {
 .title {
   font-size: 3rem;
   text-transform: uppercase;
-  padding: 10px;
 }
 
 a, a:visited, a:focus {
@@ -46,18 +51,11 @@ a, a:visited, a:focus {
   color: inherit;
 }
 
-.burgers {
-  background-color: blue;
-}
-
-.pizza {
-  background-color: orange;
-}
-
-.dessert {
-  background-color: pink;
-}
-
-.hide-active-menu {
+.hide-active-navlink {
   display: none;
+}
+
+.inner-container > * {
+  padding-left: 20px;
+  padding-right: 20px;
 }
