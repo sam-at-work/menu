@@ -1,36 +1,47 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./Menu.css";
 
-export const Menu = () => (
-  <Router>
-    <div className="outer-container">
-      <div className="inner-container">
-        <NavLink className="title" to="/home">
-          Home
-        </NavLink>
-        <NavLink className="title burgers" to="/burgers">
-          Hamburgers
-        </NavLink>
-        <Route path={"/burgers"} component={Burgers} />
-        <NavLink className="title pizza" to="/pizza">
-          Pizza
-        </NavLink>
-        <Route path={"/pizza"} component={Pizza} />
-        <NavLink className="title dessert" to="/dessert">
-          Dessert
-        </NavLink>
-        <Route path={"/dessert"} component={Dessert} />
+/**
+ * Making this a component will make it rerender when we change url so it can use
+ * the correct value for "to".
+ * PureComponent this wouldn't fwork
+ */
+class DynamicLink extends React.Component {
+  render() {
+    const { to, className, children } = this.props;
+    const pathname = window.location.pathname;
+    return (
+      <Link className={`title ${className}`} to={pathname === to ? "" : to}>
+        {children}
+      </Link>
+    );
+  }
+}
+
+export const Menu = () => {
+  return (
+    <Router>
+      <div className="outer-container">
+        <div className="inner-container">
+          <DynamicLink className="burgers" to="/burgers">
+            Burgers
+          </DynamicLink>
+          <Route path={"/burgers"} component={Burgers} />
+          <DynamicLink className="pizza" to="/pizza">
+            Pizza
+          </DynamicLink>
+          <Route path={"/pizza"} component={Pizza} />
+          <DynamicLink className="dessert" to="/dessert">
+            Dessert
+          </DynamicLink>
+          <Route path={"/dessert"} component={Dessert} />
+        </div>
       </div>
-    </div>
-  </Router>
-);
+    </Router>
+  );
+};
 
 const Burgers = match => (
   <ul className="scrollable-content burgers">

@@ -1,38 +1,3 @@
-/*.title {*/
-  /*color: white;*/
-  /*text-decoration: none;*/
-  /*text-transform: uppercase;*/
-  /*font-size: 3em;*/
-/*}*/
-
-/*.active-menu-page {*/
-  /*cursor: inherit;*/
-/*}*/
-
-/*.menu-router {*/
-  /*font-family: 'BioRhyme Expanded', serif;*/
-  /*color: white;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*height: 100vh;*/
-/*}*/
-
-/*.menu-body {*/
-  /*!*flex-grow: 1;*!*/
-  /*!*height: 100%;*!*/
-  /*overflow: scroll;*/
-/*}*/
-
-/*.menu {*/
-  /*overflow: scroll;*/
-  /*height: 100vh;*/
-  /*background-color: red;*/
-/*}*/
-
-/*a {*/
-  /*display: block;*/
-/*}*/
-
 body {
   margin: 0;
   font-family: 'BioRhyme Expanded', serif;
@@ -71,7 +36,9 @@ body {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 10px;
 }
 
 a, a:visited, a:focus {
