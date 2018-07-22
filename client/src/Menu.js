@@ -16,7 +16,7 @@ import { MenuItem } from "./components/MenuItem";
 export const Menu = () => {
   console.log("render menu");
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="outer-container">
         <div className="inner-container">
           <MenuSection sectionPath={"/burgers"} sectionData={burgers} />
