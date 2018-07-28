@@ -30,6 +30,9 @@ body {
 
   /* for Firefox */
   min-height: 0;
+
+  /* for IE 11 to stop content going off bottom of screen */
+  height: 100%;
 }
 
 .scrollable-content {
