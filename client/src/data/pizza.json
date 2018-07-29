@@ -1,5 +1,6 @@
 {
   "sectionName": "Pizza",
+  "sectionPath": "/pizza",
   "color": "orange",
   "menuItems": [
     {

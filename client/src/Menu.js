@@ -9,6 +9,7 @@ import {
 import burgers from "./data/burgers";
 import pizza from "./data/pizza";
 import drinks from "./data/drinks";
+import desserts from "./data/desserts";
 
 import "./Menu.css";
 import { MenuItem } from "./components/MenuItem";
@@ -19,9 +20,10 @@ export const Menu = () => {
     <Router basename={process.env.PUBLIC_URL}>
       <div className="outer-container">
         <div className="inner-container">
-          <MenuSection sectionPath={"/burgers"} sectionData={burgers} />
-          <MenuSection sectionPath={"/pizza"} sectionData={pizza} />
-          <MenuSection sectionPath={"/drinks"} sectionData={drinks} />
+          <MenuSection sectionData={burgers} />
+          <MenuSection sectionData={pizza} />
+          <MenuSection sectionData={drinks} />
+          <MenuSection sectionData={desserts} />
         </div>
       </div>
     </Router>
@@ -29,37 +31,59 @@ export const Menu = () => {
 };
 
 const MenuSection = ({
-  sectionPath,
-  sectionData: { sectionName, color: sectionColor, menuItems: sectionItems }
+  sectionPrefix = "",
+  sectionData: {
+    sectionPath,
+    sectionName,
+    color: sectionColor,
+    menuItems: sectionItems,
+    subSections
+  }
 }) => {
-  console.log("render");
   const primaryStyles = { backgroundColor: sectionColor };
+
+  console.log(sectionItems);
+
+  let content;
+  if (sectionItems) {
+    content = (
+      <ul className="scrollable-content" style={primaryStyles}>
+        {sectionItems.map(item => (
+          <li key={item.name}>
+            <MenuItem {...item} />
+          </li>
+        ))}
+      </ul>
+    );
+  } else if (subSections) {
+    content = subSections.map(subSection => (
+      <MenuSection
+        sectionData={subSection}
+        sectionPrefix={sectionPath}
+        key={subSection.sectionName}
+      />
+    ));
+  }
+
   return (
     <React.Fragment>
       <NavLink
         className="title"
         activeClassName="hide-active-navlink"
         style={primaryStyles}
-        to={sectionPath}
+        to={sectionPrefix + sectionPath}
       >
         {sectionName}
       </NavLink>
 
       <Route
-        path={sectionPath}
+        path={sectionPrefix + sectionPath}
         render={() => (
           <React.Fragment>
-            <Link className="title" style={primaryStyles} to="/">
+            <Link className="title" style={primaryStyles} to={sectionPrefix}>
               {sectionName}
             </Link>
-
-            <ul className="scrollable-content" style={primaryStyles}>
-              {sectionItems.map(item => (
-                <li key={item.name}>
-                  <MenuItem {...item} />
-                </li>
-              ))}
-            </ul>
+            {content}
           </React.Fragment>
         )}
       />

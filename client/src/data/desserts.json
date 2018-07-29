@@ -1,0 +1,58 @@
+{
+  "sectionName": "Desserts",
+  "sectionPath": "/desserts",
+  "color": "pink",
+  "subSections": [
+    {
+      "sectionName": "Icecream",
+      "sectionPath": "/icecream",
+      "color": "purple",
+      "menuItems": [
+        {
+          "name": "Vanilla Tropical Sundae",
+          "price": 15,
+          "ingredients": [
+            "vanilla icecream",
+            "banana",
+            "mango",
+            "pineapple",
+            "tropical sauce"
+          ]
+        },
+        {
+          "name": "Chocolate Thunder",
+          "price": 15,
+          "ingredients": [
+            "chocolate icecream",
+            "licorice",
+            "dark chocolate flakes",
+            "caramel sauce",
+            "chocolate sauce",
+            "roasted almonds"
+          ]
+        }
+      ]
+    },
+    {
+      "sectionName": "Cake",
+      "sectionPath": "/cake",
+      "color": "maroon",
+      "menuItems": [
+        {
+          "name": "Banana Cake",
+          "price": 15,
+          "ingredients": [
+            "vanilla icecream",
+            "slice of banana cake",
+            "whipped cream"
+          ]
+        },
+        {
+          "name": "Cheesecake",
+          "price": 15,
+          "ingredients": ["cheese", "cake"]
+        }
+      ]
+    }
+  ]
+}
