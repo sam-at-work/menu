@@ -4,8 +4,8 @@ I wanted to make a website that used ReactRouter.
 
 I picked a restuarant menu because it conveniently has sections (and in the future I will add sub sections.)
 
-Static Site - GitHub Pages
+Static Page served from Node Server - Zeit
 - [react-router](https://cra-with-api-lzhnvfcnvl.now.sh)
 
-Static Page served from Node Server - Zeit
+Static Site - GitHub Pages
 - [Demo](https://sam-at-work.github.io/menu/)
